@@ -14,6 +14,7 @@ namespace NBomberInfluxDbGrafana
     /// to start, use:  docker-compose up -d
     /// to stop, use:  docker-compose down
     ///
+    /// grafana default credentials: user:admin pass:admin
     /// Download grafana dashboard from: https://nbomber.com/docs/grafana-dashboard
     /// </summary>
     public class InfluxDbAndGrafana
@@ -54,7 +55,9 @@ namespace NBomberInfluxDbGrafana
             var output = JsonConvert.SerializeObject(result);
             Console.WriteLine(output);
 
-            //Assert.IsTrue(result.FailCount == 0);
+            Assert.IsTrue(result.RequestCount > 0);
+            Assert.IsTrue(result.OkCount > 0);
+            Assert.IsTrue(result.FailCount == 0);
         }
     }
 }
