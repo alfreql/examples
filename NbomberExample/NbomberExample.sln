@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NbomberExample", "NbomberExample.csproj", "{59F1C6AD-1C4D-4EEC-A693-11A8AFB12300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBomberInfluxDbGrafana", "..\NBomberInfluxDbGrafana\NBomberInfluxDbGrafana.csproj", "{87B867C6-F468-4820-93B3-50D4B23790A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBomberInfluxDbGrafana", "NBomberInfluxDbGrafana\NBomberInfluxDbGrafana.csproj", "{87B867C6-F468-4820-93B3-50D4B23790A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
