@@ -42,7 +42,10 @@ namespace NBomberInfluxDbGrafana
                                             .WithLoadSimulations(Simulation.KeepConstant(copies: 1, TimeSpan.FromSeconds(30)));
 
             // InfluxDb
-            InfluxDbSinkConfig influxConfig = InfluxDbSinkConfig.Create(url: "http://localhost:8086", database: "default");
+            InfluxDbSinkConfig influxConfig = InfluxDbSinkConfig.Create(url: "http://localhost:8086/",
+                                                                    database: "loadTests", 
+                                                                    userName: "tempUser",
+                                                                    password: "tempPass");
             InfluxDBSink influxDb = new InfluxDBSink(influxConfig);
 
             var result = NBomberRunner.RegisterScenarios(scenario)
