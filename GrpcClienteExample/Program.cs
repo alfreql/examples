@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
@@ -9,14 +10,17 @@ namespace GrpcClienteExample
 {
     class Program
     {
+        /// <summary>
+        /// Este main es para probar viendo como escribe en la consola en tiempo real. Pues los test se demora en
+        ///     escribir en la consola y no se ve bien la intecaccion de cliente y server para los casos de stream.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         static async Task Main(string[] args)
         {
-            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new Greeter.GreeterClient(channel);
+            var test = new ClientExamples();
+            await test.ServerStreamCall();
 
-            var request = new HelloRequest() {DeliveryDate = DateTime.UtcNow.ToTimestamp(), Name = "SomeName"};
-            var reply = await client.SayHelloAsync(request);
-            Console.WriteLine("Greeting: " + reply.Message);
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
