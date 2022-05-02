@@ -12,6 +12,7 @@ service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
   rpc SayHello2 (google.protobuf.Empty) returns (HelloReply);
+  rpc SayHelloStream (HelloRequest) returns (stream HelloReply);
 }
 
 // The request message containing the user's name.
